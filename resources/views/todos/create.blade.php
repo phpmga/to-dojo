@@ -17,20 +17,7 @@
 
 {!! Form::open(['route' => 'todos.store']) !!}
 
-    <div class="form-group">
-        {!! Form::label('name', 'Tarefa') !!}
-        {!! Form::text('name', Input::old('name'), array('class' => 'form-control')) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('description', 'Descrição') !!}
-        {!! Form::textarea('description', Input::old('description'), array('class' => 'form-control')) !!}
-    </div>
-
-    <div class="form-group">
-        {!! Form::label('completed', 'Status') !!}
-        {!! Form::select('completed', array('0' => 'Not Completed', '1' => 'Completed'), Input::old('completed'), array('class' => 'form-control')) !!}
-    </div>
+    @include('todos._form')
 
     {!! Form::submit('Criar um TODO', array('class' => 'btn btn-primary form-control')) !!}
 
